@@ -119,6 +119,20 @@
                 font-size: 1em;
                 border-radius: 0.5em;
             }
+
+            /* overlay image */
+            .overlay-img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 25vw;
+                opacity: 0.2;
+            }
+            @media screen and (min-width: 1650px), screen and (max-width: 600px) {
+                .overlay-img {
+                    opacity: 1;
+                }
+            }
         </style>
         <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
@@ -196,9 +210,13 @@
                 </form>
             </section>
         </section>
+        <section style="text-align: center">
+            <img src="icons/nohello.png" style="width: 50%">
+        </section>
         <footer>
             <p><a href="https://github.com/simonhearne/nohello.club/">fork on GitHub</a></p>
         </footer>
+        <img src="icons/nohello.png" class="overlay-img">
         <script>
             window.addEventListener('load', () => {
                 let params = new URLSearchParams(window.location.search);
