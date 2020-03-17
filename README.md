@@ -47,9 +47,9 @@ To get the answer in this case took eight messages with some thinly veiled pleas
 *The most effective method of asking the question? Just ask the question!*
 
 > Hello, I hope you are well!
-> I have a question about <work-thing>: <actual-question>
+> I have a question about xyz: My question is...
 
-> Hey, I'm good thanks! <the-answer>.
+> Hey, I'm good thanks! This is the answer.
 
 > Aw jeez, so simple. Thanks!
 
