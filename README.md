@@ -59,3 +59,5 @@ in fact it demonstrates respect for the other person's time.*
 ## How do I join?
 
 Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".
+
+![no hello icon](/icons/nohello.png)
