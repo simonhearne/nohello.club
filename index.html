@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>The No Hello Club - Just say what you need!</title>
+        <meta name="description" content="Don't open a conversation with an empty greeting, it wastes everyone's time." />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <style type="text/css">
+            /* monica.css */
+            * {box-sizing: border-box}
+            [hidden] {display: none !important}
+            [disabled] {pointer-events:none; opacity: 0.3}
+            .horizontal {display: flex; flex-direction: row; justify-content: space-between}
+            .vertical {display: flex; flex-direction: column}
+            .center {justify-content: center; align-items: center}
+            .flex {flex: 1}
+            html {
+            --spacing-xs: 8px;
+            --spacing: 24px;
+            --spacing-s: 12px;
+            --spacing-m: 36px;
+            }
+
+            /* basic styles */
+            body {
+                font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+                font-size: 110%;
+                max-width: 800px;
+                padding: 1em;
+                width: 100%;
+                margin: auto;
+            }
+
+            /* chat stuff */
+            .chatbox {
+                padding: 1em;
+                background-color: antiquewhite;
+                border-radius: 1em;
+                position: relative;
+                box-shadow: 0 0 10px inset #8883;
+            }
+            .chat {
+                padding: 0.5em 1em;
+                border-radius: 0.5em;
+                width: auto;
+                max-width: 90%;
+                box-shadow: 0.5em 0.5em 1em #8888;
+                position: relative;
+                margin: 1em;
+            }
+            .chat::before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                border: 0.5em solid transparent;
+                position: absolute;
+            }
+            .chat.right {
+                background-color: #baffd5;
+                margin-left: 10%;
+                border-bottom-right-radius: 0em;
+                text-align: right;
+            }
+            .chat.right::before {
+                right: -0.5em;
+                bottom: 0;
+                border-bottom: 0.75em solid #baffd5;
+            }
+            .chat.left {
+                background-color: #c9c9ff;
+                margin-right: 10%;
+                border-top-left-radius: 0em;
+            }
+            .chat.left::before {
+                left: -0.5em;
+                top: 0;
+                border-top: 0.75em solid #c9c9ff;    
+            }
+
+            /* sticky footer */
+            footer {
+                margin-top: 5em;
+                background: rgba(255,255,255,0.5);
+                position: relative;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+            }
+            footer p {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* table & form */
+            table.wide {
+                width: 100%;
+            }
+            table.wide tr td:first-child() {
+                width: fit-content;
+            }
+
+            input {
+                width: 100%;
+                zoom: 1.5;
+            }
+            button {
+                width: 100%;
+                padding: 0.5em;
+                font-size: 1em;
+                border-radius: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>The No Hello Club</h1>
+        </header>
+        <section id="intro">
+            <h2>Why?</h2>
+            <p>Unnecessary pleasantries waste time and effort. In the No Hello Club we never start an interaction with a useless phrase such as "Hello!".</p>
+            <p>Consider this conversation:</p>
+            <div class="chatbox">
+                <p class="chat left">Hello <span data-param="n">&lt;your-name&gt;</span>!</p>
+                <p class="chat right">Hey</p>
+                <p class="chat left">Can I ask you about <span data-param="t">&lt;work-thing&gt;</span>?</p>
+                <p class="chat right">Sure</p>
+                <p class="chat left">Awesome! <span data-param="q">&lt;actual-question&gt;</span></p>
+                <p class="chat right"><span data-param="a">&lt;the-answer&gt;</span></p>
+                <p class="chat left">Aw jeez, so simple. Thanks!</p>
+            </div>
+            <p>To get the answer took seven messages. With each message potentially adding minutes of delay thanks to context-switching.</p>
+            <p>Another common pattern:</p>
+            <div class="chatbox">
+                <p class="chat left">Hello <span data-param="n">&lt;your-name&gt;</span>, how are you?</p>
+                <p class="chat right">Hey, I'm good thanks! And you?</p>
+                <p class="chat left">I'm super awesome!</p>
+                <p class="chat left">Can I ask you about <span data-param="t">&lt;work-thing&gt;</span>?</p>
+                <p class="chat right">Sure</p>
+                <p class="chat left">Awesome! <span data-param="q">&lt;actual-question&gt;</span></p>
+                <p class="chat right"><span data-param="a">&lt;the-answer&gt;</span></p>
+                <p class="chat left">Aw jeez, so simple. Thanks!</p>
+            </div>
+            <p>To get the answer in this case took eight messages with some thinly veiled pleasantries.</p>
+            <p>The most effective method of asking the question? Just ask the question!</p>
+            <div class="chatbox">
+                <p class="chat left">Hello <span data-param="n">&lt;your-name&gt;</span>, I hope you are well!<br>I have a question aboout <span data-param="t">&lt;work-thing&gt;</span>: <span data-param="q">&lt;actual-question&gt;</span></p>
+                <p class="chat right">Hey, I'm good thanks! <span data-param="a">&lt;the-answer&gt;</span>.</p>
+                <p class="chat left">Aw jeez, so simple. Thanks!</p>
+            </div>
+            <section>
+                <h2>How do I join?</h2>
+                <p>Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".</p>
+                <p>You can customize this page and share it to get others to join:</p>
+                <form target="" method="get">
+                    <table class="wide">
+                        <tr><td><label for="n">Your name:</label></td><td><input type="text" name="n"/></td></tr>
+                        <tr><td><label for="n">The question:</label></td><td><input type="text" name="q"/></td></tr>
+                        <tr><td><label for="n">The topic:</label></td><td><input type="text" name="t"/></td></tr>
+                        <tr><td><label for="n">The answer:</label></td><td><input type="text" name="a"/></td></tr>
+                        <tr><td colspan="2"><button type="submit">Customize!</button></td></tr>
+                    </table>
+                </form>
+            </section>
+        </section>
+        <footer>
+            <p><a href="https://github.com/simonhearne/nohello.club/">fork on GitHub</a></p>
+        </footer>
+        <script>
+            window.addEventListener('load', () => {
+                let params = new URLSearchParams(window.location.search);
+                let keys = params.keys();
+
+                let step = keys.next();
+                while (!step.done) {
+                    parameter = step.value;
+                    let param_value = params.get(parameter);
+                    if (param_value) {
+                        let elems = document.querySelectorAll(`[data-param=${parameter}]`);
+                        [].forEach.call(elems,elem => {
+                            elem.innerText = param_value;
+                        })
+                        let formElem = document.querySelector(`input[name=${parameter}]`);
+                        formElem.value = param_value;
+                    }
+                    step = keys.next();
+                }
+            })
+        </script>
+    </body>
+</html>
