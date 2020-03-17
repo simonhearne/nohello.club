@@ -218,25 +218,23 @@
         </footer>
         <img src="icons/nohello.png" class="overlay-img">
         <script>
-            window.addEventListener('load', () => {
-                let params = new URLSearchParams(window.location.search);
-                let keys = params.keys();
+            let params = new URLSearchParams(window.location.search);
+            let keys = params.keys();
 
-                let step = keys.next();
-                while (!step.done) {
-                    parameter = step.value;
-                    let param_value = params.get(parameter);
-                    if (param_value) {
-                        let elems = document.querySelectorAll(`[data-param=${parameter}]`);
-                        [].forEach.call(elems,elem => {
-                            elem.innerText = param_value;
-                        })
-                        let formElem = document.querySelector(`input[name=${parameter}]`);
-                        formElem.value = param_value;
-                    }
-                    step = keys.next();
+            let step = keys.next();
+            while (!step.done) {
+                parameter = step.value;
+                let param_value = params.get(parameter);
+                if (param_value) {
+                    let elems = document.querySelectorAll(`[data-param=${parameter}]`);
+                    [].forEach.call(elems,elem => {
+                        elem.innerText = param_value;
+                    })
+                    let formElem = document.querySelector(`input[name=${parameter}]`);
+                    formElem.value = param_value;
                 }
-            })
+                step = keys.next();
+            }
         </script>
     </body>
 </html>
