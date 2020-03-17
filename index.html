@@ -89,7 +89,6 @@
 
             /* sticky footer */
             footer {
-                margin-top: 5em;
                 background: rgba(255,255,255,0.5);
                 position: relative;
                 width: 100%;
@@ -114,10 +113,16 @@
                 zoom: 1.5;
             }
             button {
-                width: 100%;
+                width: calc(100% - 1em);
                 padding: 0.5em;
                 font-size: 1em;
                 border-radius: 0.5em;
+                margin: 0.5em;
+                background-color: #dedaea;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #bdb9ca;
             }
 
             /* overlay image */
