@@ -40,6 +40,25 @@
                 font-style: oblique;
                 text-align: center;
             }
+            .hash-bg {
+                background: repeating-linear-gradient(45deg, transparent, transparent 10px, #ccc 10px, #ccc 20px);
+                border-radius: 1em;
+            }
+            .center-text {
+                text-align: center;
+            }
+            .one-third {
+                width: 33.3%;
+            }
+            .two-thirds {
+                width: 66.6%;
+            }
+            .float-left {
+                float: left;
+            }
+            .float-right {
+                float: right;
+            }
 
             /* chat stuff */
             .chatbox {
@@ -128,8 +147,8 @@
             /* overlay image */
             .overlay-img {
                 position: fixed;
-                top: 0;
-                right: 0;
+                top: 1vw;
+                right: 1vw;
                 opacity: 0.2;
                 z-index: -1;
                 display: flex;
@@ -138,7 +157,7 @@
                 object-fit: fill;
                 width: 20vw;
             }
-            @media screen and (min-width: 1400px), screen and (max-width: 600px) {
+            @media screen and (min-width: 1400px) {
                 .overlay-img {
                     opacity: 0.8;
                 }
@@ -220,12 +239,12 @@
             <section>
                 <h2>How do I join?</h2>
                 <p>Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".</p>
+                <p>Feel free to add a No Hello Club link and / or logo to your profiles, everything is MIT licensed for re-use:</p>
                 <div style="overflow: auto;">
-                    <p>Feel free to add a No Hello Club link and / or logo to your profiles, everything is MIT licensed for re-use:</p>
-                    <div style="text-align: center; float: left; width: 66%;"><p>640px png</p><a href="images/nohello_640_tr.png"><img loading="lazy" style="width: 100%;" src="images/nohello_640_tr.png"></a></div>
-                    <div style="text-align: center; float:right; width: 33%;"><p>320px png</p><a href="images/nohello_320_tr.png"><img loading="lazy" style="width: 100%;" src="images/nohello_320_tr.png"></a></div>
-                    <div style="text-align: center; float: left; width: 66%;"><p>640px white png</p><a href="images/nohello_640_tr_w.png"><img loading="lazy" style="width: 100%;" src="images/nohello_640_tr_w.png"></a></div>
-                    <div style="text-align: center; float:right; width: 33%;"><p>320px white png</p><a href="images/nohello_320_tr_w.png"><img loading="lazy" style="width: 100%;" src="images/nohello_320_tr_w.png"></a></div>
+                    <div class="center-text two-thirds float-left"><p>640px png</p><a href="images/nohello_640_tr.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_640_tr.png"></a></div>
+                    <div class="center-text one-third float-right" ><p>320px png</p><a href="images/nohello_320_tr.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_320_tr.png"></a></div>
+                    <div class="center-text two-thirds float-left"><p>640px white png</p><a href="images/nohello_640_tr_w.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_640_tr_w.png"></a></div>
+                    <div class="center-text one-third float-right"><p>320px white png</p><a href="images/nohello_320_tr_w.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_320_tr_w.png"></a></div>
                 </div>
                 <p>You can customize this page and share it to get others to join:</p>
                 <form target="" method="get">
@@ -241,16 +260,6 @@
         <footer>
             <p><a href="https://github.com/simonhearne/nohello.club/">fork on GitHub</a></p>
         </footer>
-        <!--
-        <img
-            src="images/nohello_320_tr.png"
-            sizes="20vw"
-            srcset="
-                images/nohello_320_tr.png 320w,
-                images/nohello_640_tr.png 640w,
-                images/nohello.png 1200w"
-            src="images/nohello.png" class="overlay-img">
-    -->
         <picture class="overlay-img">
             <source srcset="images/nohello_320_tr.png 1x, images/nohello_640_tr.png 2x" media="(prefers-color-scheme: light)">
             <source srcset="images/nohello_320_tr_w.png 1x, images/nohello_640_tr_w.png 2x" media="(prefers-color-scheme: dark)">
