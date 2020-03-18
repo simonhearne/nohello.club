@@ -127,16 +127,20 @@
 
             /* overlay image */
             .overlay-img {
-                position: absolute;
+                position: fixed;
                 top: 0;
                 right: 0;
-                width: 20vw;
                 opacity: 0.2;
                 z-index: -1;
+                display: flex;
             }
-            @media screen and (min-width: 1650px), screen and (max-width: 600px) {
+            .overlay-img img {
+                object-fit: fill;
+                width: 20vw;
+            }
+            @media screen and (min-width: 1400px), screen and (max-width: 600px) {
                 .overlay-img {
-                    opacity: 1;
+                    opacity: 0.8;
                 }
             }
 
@@ -216,6 +220,13 @@
             <section>
                 <h2>How do I join?</h2>
                 <p>Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".</p>
+                <div style="overflow: auto;">
+                    <p>Feel free to add a No Hello Club link and / or logo to your profiles, everything is MIT licensed for re-use:</p>
+                    <div style="text-align: center; float: left; width: 66%;"><p>640px png</p><a href="images/nohello_640_tr.png"><img loading="lazy" style="width: 100%;" src="images/nohello_640_tr.png"></a></div>
+                    <div style="text-align: center; float:right; width: 33%;"><p>320px png</p><a href="images/nohello_320_tr.png"><img loading="lazy" style="width: 100%;" src="images/nohello_320_tr.png"></a></div>
+                    <div style="text-align: center; float: left; width: 66%;"><p>640px white png</p><a href="images/nohello_640_tr_w.png"><img loading="lazy" style="width: 100%;" src="images/nohello_640_tr_w.png"></a></div>
+                    <div style="text-align: center; float:right; width: 33%;"><p>320px white png</p><a href="images/nohello_320_tr_w.png"><img loading="lazy" style="width: 100%;" src="images/nohello_320_tr_w.png"></a></div>
+                </div>
                 <p>You can customize this page and share it to get others to join:</p>
                 <form target="" method="get">
                     <table class="wide">
@@ -227,19 +238,10 @@
                 </form>
             </section>
         </section>
-        <section style="text-align: center">
-            <img
-            src="images/nohello_320_tr.png"
-            sizes="20vw"
-            srcset="
-                images/nohello_320_tr.png 320w,
-                images/nohello_640_tr.png 640w,
-                images/nohello.png 1200w"
-            src="images/nohello.png" style="width: 50%">
-        </section>
         <footer>
             <p><a href="https://github.com/simonhearne/nohello.club/">fork on GitHub</a></p>
         </footer>
+        <!--
         <img
             src="images/nohello_320_tr.png"
             sizes="20vw"
@@ -248,6 +250,12 @@
                 images/nohello_640_tr.png 640w,
                 images/nohello.png 1200w"
             src="images/nohello.png" class="overlay-img">
+    -->
+        <picture class="overlay-img">
+            <source srcset="images/nohello_320_tr.png 1x, images/nohello_640_tr.png 2x" media="(prefers-color-scheme: light)">
+            <source srcset="images/nohello_320_tr_w.png 1x, images/nohello_640_tr_w.png 2x" media="(prefers-color-scheme: dark)">
+            <img src="images/nohello_320_tr.png">
+        </picture>
         <script>
             let params = new URLSearchParams(window.location.search);
             let keys = params.keys();
