@@ -57,6 +57,7 @@
                 box-shadow: 0.5em 0.5em 1em #8888;
                 position: relative;
                 margin: 1em;
+                color: #111;
             }
             .chat::before {
                 content: "";
@@ -89,7 +90,6 @@
 
             /* sticky footer */
             footer {
-                background: rgba(255,255,255,0.5);
                 position: relative;
                 width: 100%;
                 left: 0;
@@ -136,6 +136,17 @@
             @media screen and (min-width: 1650px), screen and (max-width: 600px) {
                 .overlay-img {
                     opacity: 1;
+                }
+            }
+
+            /* dark theme */
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #272a2d;
+                    color: #eee;
+                }
+                a, a:visited, a:active {
+                    color: #fee;
                 }
             }
         </style>
@@ -216,12 +227,26 @@
             </section>
         </section>
         <section style="text-align: center">
-            <img src="icons/nohello.png" style="width: 50%">
+            <img
+            src="images/nohello_320_tr.png"
+            sizes="20vw"
+            srcset="
+                images/nohello_320_tr.png 320w,
+                images/nohello_640_tr.png 640w,
+                images/nohello.png 1200w"
+            src="images/nohello.png" style="width: 50%">
         </section>
         <footer>
             <p><a href="https://github.com/simonhearne/nohello.club/">fork on GitHub</a></p>
         </footer>
-        <img src="icons/nohello.png" class="overlay-img">
+        <img
+            src="images/nohello_320_tr.png"
+            sizes="20vw"
+            srcset="
+                images/nohello_320_tr.png 320w,
+                images/nohello_640_tr.png 640w,
+                images/nohello.png 1200w"
+            src="images/nohello.png" class="overlay-img">
         <script>
             let params = new URLSearchParams(window.location.search);
             let keys = params.keys();
