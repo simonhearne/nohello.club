@@ -115,7 +115,7 @@
                 100% {transform: scale(1)}
             }
 
-            /*@media ( not prefers-reduced-motion: reduce) {*/
+            @media ( prefers-reduced-motion: no-preference) {
                 .animate-in {
                     transform: scale(0);
                     animation: 250ms cubic-bezier(0, 0, 0.73, 1.68) 0s 1 normal forwards running pop-in;
@@ -123,7 +123,7 @@
                 .to-animate {
                     transform: scale(0);
                 }
-            /*}*/
+            }
             
             /* sticky footer */
             footer {
