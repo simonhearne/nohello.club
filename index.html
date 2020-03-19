@@ -269,14 +269,12 @@
         <script>
             let observer = new IntersectionObserver(
                 (entries,observer) => {
-                    console.log("HERE");
                     entries.forEach(e => {
                         if (e.isIntersecting || e.isVisible) {
                             document.querySelectorAll('.to-animate').forEach(elem => elem.classList.add("animate-in"));
                             observer.disconnect();
                         }
                     })
-                    console.log(entries);
                 }, {
                     threshold:0.5
                 }
