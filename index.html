@@ -71,7 +71,7 @@
             .chat {
                 padding: 0.5em 1em;
                 border-radius: 0.5em;
-                width: auto;
+                width: fit-content;
                 max-width: 90%;
                 box-shadow: 0.5em 0.5em 1em #8888;
                 position: relative;
@@ -87,9 +87,10 @@
             }
             .chat.right {
                 background-color: #baffd5;
-                margin-left: 10%;
+                margin: 1em 1em 1em auto;
                 border-bottom-right-radius: 0em;
                 text-align: right;
+                transform-origin: 100% 100%;
             }
             .chat.right::before {
                 right: -0.5em;
@@ -98,8 +99,9 @@
             }
             .chat.left {
                 background-color: #c9c9ff;
-                margin-right: 10%;
+                margin: 1em auto 1em 1em;
                 border-top-left-radius: 0em;
+                transform-origin: 0% 0%;
             }
             .chat.left::before {
                 left: -0.5em;
@@ -107,6 +109,22 @@
                 border-top: 0.75em solid #c9c9ff;    
             }
 
+            /* animations */
+            @keyframes pop-in {
+                0% {transform: scale(0);}
+                100% {transform: scale(1)}
+            }
+
+            /*@media ( not prefers-reduced-motion: reduce) {*/
+                .animate-in {
+                    transform: scale(0);
+                    animation: 250ms cubic-bezier(0, 0, 0.73, 1.68) 0s 1 normal forwards running pop-in;
+                }
+                .to-animate {
+                    transform: scale(0);
+                }
+            /*}*/
+            
             /* sticky footer */
             footer {
                 position: relative;
@@ -204,59 +222,40 @@
         </header>
         <section id="intro">
             <h2>Why?</h2>
-            <p>Unnecessary pleasantries waste time and effort. In the No Hello Club we never start an interaction with a useless phrase such as "Hello!".</p>
-            <p>If someone has shared this with you or has this link in their profile, it means they won't be offended if you skip the pleasantries and get straight to the point.</p>
+            <p>Unnecessary pleasantries waste time and effort in task-related conversations. In the No Hello Club we never start a request for information or help with a useless phrase likes "Hello".</p>
+            <p>If someone has shared this with you or has this link in their profile, it means they won't be offended if you skip the pleasantries and get straight to the point. Do still be polite, and feel free to have social conversations!</p>
             <p class="highlight">Consider this conversation:</p>
             <div class="chatbox">
-                <p class="chat left">Hello <span data-param="n">&lt;your-name&gt;</span>!</p>
-                <p class="chat right">Hey</p>
-                <p class="chat left">Can I ask you a question?</p>
-                <p class="chat right">Sure</p>
-                <p class="chat left">Awesome! <span data-param="q">&lt;actual-question&gt;</span></p>
-                <p class="chat right"><span data-param="a">&lt;the-answer&gt;</span></p>
-                <p class="chat left">Aw jeez, so simple. Thanks!</p>
+                <p class="chat left  animate-in" style="animation-delay: 1s">Hello</p>
+                <p class="chat right animate-in" style="animation-delay: 2s">Hey</p>
+                <p class="chat left  animate-in" style="animation-delay: 3s">How are you?</p>
+                <p class="chat right animate-in" style="animation-delay: 4s">Fine thanks!</p>
+                <p class="chat left  animate-in" style="animation-delay: 5s">Can I ask you a question?</p>
+                <p class="chat right animate-in" style="animation-delay: 6s">Sure</p>
+                <p class="chat left  animate-in" style="animation-delay: 7s">Awesome! My question is ...</p>
+                <p class="chat right animate-in" style="animation-delay: 8s">This is the answer ...</p>
+                <p class="chat left  animate-in" style="animation-delay: 9s">Aw jeez, so simple. Thanks!</p>
             </div>
-            <p>To get the answer took seven messages. With each message potentially adding minutes of delay thanks to context-switching.</p>
-            <p class="highlight">Another common pattern:</p>
-            <div class="chatbox">
-                <p class="chat left">Hello <span data-param="n">&lt;your-name&gt;</span>, how are you?</p>
-                <p class="chat right">Hey, I'm good thanks! And you?</p>
-                <p class="chat left">I'm super awesome!</p>
-                <p class="chat left">Can I ask you a question?</p>
-                <p class="chat right">Sure</p>
-                <p class="chat left">Awesome! <span data-param="q">&lt;actual-question&gt;</span></p>
-                <p class="chat right"><span data-param="a">&lt;the-answer&gt;</span></p>
-                <p class="chat left">Aw jeez, so simple. Thanks!</p>
-            </div>
-            <p>To get the answer in this case took eight messages with some thinly veiled pleasantries.</p>
+            <p>To get the answer took nine messages. With each message adding significant delay thanks to context-switching.</p>
             <p class="highlight">The most effective method of asking the question? Just ask the question!</p>
-            <div class="chatbox">
-                <p class="chat left">Hello <span data-param="n">&lt;your-name&gt;</span>, I hope you are well!<br>I have a question about <span data-param="t">&lt;work-thing&gt;</span>: <span data-param="q">&lt;actual-question&gt;</span></p>
-                <p class="chat right">Hey, I'm good thanks! <span data-param="a">&lt;the-answer&gt;</span>.</p>
-                <p class="chat left">Aw jeez, so simple. Thanks!</p>
+            <div class="chatbox" id="to-animate">
+                <p class="chat left  to-animate" style="animation-delay: 1s">Hello, I hope you are well!<br>I have a question, I hope you don't mind: the question ...</p>
+                <p class="chat right to-animate" style="animation-delay: 2s">Hey, I'm good thanks! Of course, the answer is ...</p>
+                <p class="chat left  to-animate" style="animation-delay: 3s">Aw jeez, so simple. Thanks!</p>
             </div>
             <p class="emphasis">Being succinct and effective does not have to be rude,<br> in fact it demonstrates respect for the other person's time.</p>
             <section>
                 <h2>How do I join?</h2>
-                <p>Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".</p>
-                <p>Feel free to add a No Hello Club link and logo to your profile, website or as a custom Slack emoji:</p>
+                <p>Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".<br>
+                Feel free to add a No Hello Club link and logo to your profile, website or as a custom Slack emoji:</>
                 <div style="overflow: auto;">
                     <div class="center-text two-thirds float-left"><p>640px png</p><a href="images/nohello_640_tr.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_640_tr.png"></a></div>
-                    <div class="center-text one-third float-right" ><p>320px png</p><a href="images/nohello_320_tr.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_320_tr.png"></a></div>
+                    <div class="center-text one-third float-right"><p>320px png</p><a href="images/nohello_320_tr.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_320_tr.png"></a></div>
                     <div class="center-text two-thirds float-left"><p>640px white png</p><a href="images/nohello_640_tr_w.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_640_tr_w.png"></a></div>
                     <div class="center-text one-third float-right"><p>320px white png</p><a href="images/nohello_320_tr_w.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_320_tr_w.png"></a></div>
                     <div class="center-text two-thirds float-left"><p>640px filled png</p><a href="images/nohello_640_filled.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_640_filled.png"></a></div>
                     <div class="center-text one-third float-right"><p>320px filled png</p><a href="images/nohello_320_filled.png"><img class="hash-bg" loading="lazy" style="width: 100%;" src="images/nohello_320_filled.png"></a></div>
                 </div>
-                <p>You can customize this page and share it to get others to join:</p>
-                <form target="" method="get">
-                    <table class="wide">
-                        <tr><td><label for="n">Your name:</label></td><td><input type="text" name="n"/></td></tr>
-                        <tr><td><label for="q">The question:</label></td><td><input type="text" name="q"/></td></tr>
-                        <tr><td><label for="a">The answer:</label></td><td><input type="text" name="a"/></td></tr>
-                        <tr><td colspan="2"><button type="submit">Customize!</button></td></tr>
-                    </table>
-                </form>
             </section>
         </section>
         <footer>
@@ -268,23 +267,21 @@
             <img src="images/nohello_320_tr.png">
         </picture>
         <script>
-            let params = new URLSearchParams(window.location.search);
-            let keys = params.keys();
-
-            let step = keys.next();
-            while (!step.done) {
-                parameter = step.value;
-                let param_value = params.get(parameter);
-                if (param_value) {
-                    let elems = document.querySelectorAll(`[data-param=${parameter}]`);
-                    [].forEach.call(elems,elem => {
-                        elem.innerText = param_value;
+            let observer = new IntersectionObserver(
+                (entries,observer) => {
+                    console.log("HERE");
+                    entries.forEach(e => {
+                        if (e.isIntersecting || e.isVisible) {
+                            document.querySelectorAll('.to-animate').forEach(elem => elem.classList.add("animate-in"));
+                            observer.disconnect();
+                        }
                     })
-                    let formElem = document.querySelector(`input[name=${parameter}]`);
-                    formElem.value = param_value;
+                    console.log(entries);
+                }, {
+                    threshold:0.5
                 }
-                step = keys.next();
-            }
+            );
+            observer.observe(document.querySelector('#to-animate'))
         </script>
     </body>
 </html>
