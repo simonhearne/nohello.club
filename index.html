@@ -8,20 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         
         <style type="text/css">
-            /* monica.css */
             * {box-sizing: border-box}
-            [hidden] {display: none !important}
-            [disabled] {pointer-events:none; opacity: 0.3}
-            .horizontal {display: flex; flex-direction: row; justify-content: space-between}
-            .vertical {display: flex; flex-direction: column}
-            .center {justify-content: center; align-items: center}
-            .flex {flex: 1}
-            html {
-            --spacing-xs: 8px;
-            --spacing: 24px;
-            --spacing-s: 12px;
-            --spacing-m: 36px;
-            }
 
             /* basic styles */
             body {
@@ -90,25 +77,23 @@
             .chat.right {
                 background-color: #baffd5;
                 margin: 1em 1em 1em auto;
-                border-bottom-right-radius: 0em;
                 text-align: right;
                 transform-origin: 100% 100%;
             }
             .chat.right::before {
-                right: -0.5em;
-                bottom: 0;
-                border-bottom: 0.75em solid #baffd5;
+                right: -1em;
+                bottom: 0.3em;
+                border-left: 0.75em solid #baffd5;
             }
             .chat.left {
                 background-color: #c9c9ff;
                 margin: 1em auto 1em 1em;
-                border-top-left-radius: 0em;
                 transform-origin: 0% 0%;
             }
             .chat.left::before {
-                left: -0.5em;
-                top: 0;
-                border-top: 0.75em solid #c9c9ff;    
+                left: -1em;
+                top: 0.3em;
+                border-right: 0.75em solid #c9c9ff;    
             }
 
             /* animations */
@@ -137,31 +122,6 @@
             footer p {
                 width: 100%;
                 text-align: center;
-            }
-
-            /* table & form */
-            table.wide {
-                width: 100%;
-            }
-            table.wide tr td:first-child() {
-                width: fit-content;
-            }
-
-            input {
-                width: 100%;
-                zoom: 1.5;
-            }
-            button {
-                width: calc(100% - 1em);
-                padding: 0.5em;
-                font-size: 1em;
-                border-radius: 0.5em;
-                margin: 0.5em;
-                background-color: #dedaea;
-                cursor: pointer;
-            }
-            button:hover {
-                background-color: #bdb9ca;
             }
 
             /* overlay image */
@@ -224,7 +184,7 @@
         </header>
         <section id="intro">
             <h2>Why?</h2>
-            <p>Unnecessary pleasantries waste time and effort in task-related conversations. In the No Hello Club we never start a request for information or help with a useless phrase like "Hello".</p>
+            <p>Unnecessary pleasantries waste time and effort in task-based conversations. In the No Hello Club we never start a request for information or help with a useless phrase like "Hello".</p>
             <p>If someone has shared this with you or has this link in their profile, it means they won't be offended if you skip the pleasantries and get straight to the point. Do still be polite, and feel free to have social conversations!</p>
             <p class="highlight">Consider this conversation:</p>
             <div class="chatbox">
@@ -245,7 +205,7 @@
                 <p class="chat right to-animate" style="animation-delay: 2s">Hey, I'm good thanks! Of course, the answer is ...</p>
                 <p class="chat left  to-animate" style="animation-delay: 3s">Aw jeez, so simple. Thanks!</p>
             </div>
-            <p class="emphasis">Being succinct and effective does not have to be rude,<br> in fact it demonstrates respect for the other person's time.</p>
+            <p class="emphasis">Being succinct and effective does not have to be rude,<br> it demonstrates respect for the other person's time.</p>
             <section>
                 <h2>How do I join?</h2>
                 <p>Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".<br>
