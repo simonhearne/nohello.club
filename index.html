@@ -99,6 +99,13 @@
                 top: 0.3em;
                 border-right: 0.75em solid #c9c9ff;    
             }
+            .chat .timestamp {
+                display: block;
+                font-size: 80%;
+                font-family: monospace;
+                color: darkslategrey;
+                margin-top: 6px;
+            }
 
             /* animations */
             @keyframes pop-in {
@@ -192,22 +199,22 @@
             <p>If someone has shared this with you or has this link in their profile, it means they won't be offended if you skip the pleasantries and get straight to the point. Do still be polite, and feel free to have social conversations!</p>
             <p class="highlight">Consider this conversation:</p>
             <div class="chatbox">
-                <p class="chat left  animate-in" style="animation-delay: 1s">Hello</p>
-                <p class="chat right animate-in" style="animation-delay: 2s">Hey</p>
-                <p class="chat left  animate-in" style="animation-delay: 3s">How are you?</p>
-                <p class="chat right animate-in" style="animation-delay: 4s">Fine thanks!</p>
-                <p class="chat left  animate-in" style="animation-delay: 5s">Can I ask you a question?</p>
-                <p class="chat right animate-in" style="animation-delay: 6s">Sure</p>
-                <p class="chat left  animate-in" style="animation-delay: 7s">Awesome! My question is ...</p>
-                <p class="chat right animate-in" style="animation-delay: 8s">This is the answer ...</p>
-                <p class="chat left  animate-in" style="animation-delay: 9s">Aw jeez, so simple. Thanks!</p>
+                <p class="chat left  animate-in" style="animation-delay: 1s">Hello<span class="timestamp">Monday 17:30 UTC</span></p>
+                <p class="chat right animate-in" style="animation-delay: 2s">Hey<span class="timestamp">Monday 17:35 UTC</span></p>
+                <p class="chat left  animate-in" style="animation-delay: 3s">How are you?<span class="timestamp">Monday 17:40 UTC</span></p>
+                <p class="chat right animate-in" style="animation-delay: 4s">Fine thanks!<span class="timestamp">Monday 17:51 UTC</span></p>
+                <p class="chat left  animate-in" style="animation-delay: 5s">Can I ask you a question?<span class="timestamp">Tuesday 09:30 UTC</span></p>
+                <p class="chat right animate-in" style="animation-delay: 6s">Sure<span class="timestamp">Tuesday 17:08 UTC</span></p>
+                <p class="chat left  animate-in" style="animation-delay: 7s">Awesome! My question is ...<span class="timestamp">Tuesday 17:18 UTC</span></p>
+                <p class="chat right animate-in" style="animation-delay: 8s">This is the answer ...<span class="timestamp">Wednesday 16:41 UTC</span></p>
+                <p class="chat left  animate-in" style="animation-delay: 9s">Aw jeez, so simple. Thanks!<span class="timestamp">Wednesday 16:54 UTC</span></p>
             </div>
             <p>To get the answer took nine messages. With each message adding significant delay thanks to context-switching.</p>
             <p class="highlight">The most effective method of asking the question? Just ask the question!</p>
             <div class="chatbox" id="to-animate">
-                <p class="chat left  to-animate" style="animation-delay: 1s">Hello, I hope you are well!<br>I have a question, I hope you don't mind: the question ...</p>
-                <p class="chat right to-animate" style="animation-delay: 2s">Hey, I'm good thanks! Of course, the answer is ...</p>
-                <p class="chat left  to-animate" style="animation-delay: 3s">Aw jeez, so simple. Thanks!</p>
+                <p class="chat left  to-animate" style="animation-delay: 1s">Hello, I hope you are well!<br>I have a question, I hope you don't mind: the question ...<span class="timestamp">Monday 17:30 UTC</span></p>
+                <p class="chat right to-animate" style="animation-delay: 2s">Hey, I'm good thanks! Of course, the answer is ...<span class="timestamp">Monday 17:35 UTC</span></p>
+                <p class="chat left  to-animate" style="animation-delay: 3s">Aw jeez, so simple. Thanks!<span class="timestamp">Monday 17:40 UTC</span></p>
             </div>
             <p class="emphasis">Being succinct and effective does not have to be rude,<br> it demonstrates respect for the other person's time.</p>
             <section>
