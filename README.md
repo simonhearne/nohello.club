@@ -60,4 +60,4 @@ in fact it demonstrates respect for the other person's time.*
 
 Joining the no hello club is simple! Follow the guidelines above and never start a conversation with "Hello".
 
-![no hello icon](/icons/nohello.png)
+![no hello icon](/images/nohello.png)
